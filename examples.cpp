@@ -6,8 +6,10 @@
 using namespace std;
 using namespace arma;
 
-void basic_matrix_operations();
-
+/*
+ * Armadillo tutorials/code samples. 
+ * http://arma.sourceforge.net/docs.html#zeros_member
+ */
 int main() {
 
     /******************************
@@ -47,21 +49,9 @@ int main() {
     A = ones<mat>(4, 5);
 
     // add 123 to each element
-    A.transform( [](double val) { return (val + 123.0); } );
+    // A.transform( [](double val) { return (val + 123.0); } );
 
 	return 0; 
-}
-
-/*
- * This function outlines ways to initialize a matrix.
- * This is additionally found in the documentation here:  
- * http://arma.sourceforge.net/docs.html#zeros_member
- */
-void basic_matrix_operations() {
-
-    
-    return;
-
 }
 
 
