@@ -1,3 +1,0 @@
-1. Rewrite some of the problems in the computational phsyics book
-2. Rewrite some of the computational physics code
-3. Try finding normal modes from David Morin's book
