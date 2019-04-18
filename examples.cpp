@@ -7,10 +7,11 @@ using namespace std;
 using namespace arma;
 
 void convolution();
+void matrix_initializations();
 
 int main() {
 
-
+    matrix_initializations();
 	return 0; 
 }
 
@@ -25,19 +26,21 @@ void matrix_initializations() {
     // create a 5x10 matrix and set values to zero.
     mat zero_matrix(5, 10); 
     zero_matrix.zeros(); 
-    cout<<"A 5x10 zero matrix:"<<zero_matrix<<endl;
+    cout<<"A 5x10 zero matrix:"<<endl<<zero_matrix<<endl;
     
     // An alternative way to set matrices to zero.
     mat zero_matrix1;
     zero_matrix1.zeros(10, 20);
-    cout<<"A 10x20 zero matrix:"<<zero_matrix1<<endl;
+    cout<<"A 10x20 zero matrix:"<<endl<<zero_matrix1<<endl;
 
-	
     // Sets all elements to random values
 	mat A = randu<mat>(4, 5);
-	mat B = randu<mat>(4, 5);
+    cout<<"Random values:"<<endl<<A<<endl;
 
-	cout << A*B.t() << endl;
+    // Fills the desired vector with a particular value.
+    mat custom_vals(4, 5);
+    custom_vals.fill(155.0);
+    cout<<"4x5 matrix filled with the double 155.0"<<endl<<custom_vals<<endl;
 
 }
 
