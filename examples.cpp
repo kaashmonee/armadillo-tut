@@ -6,12 +6,11 @@
 using namespace std;
 using namespace arma;
 
-void convolution();
-void matrix_initializations();
+void basic_matrix_operations();
 
 int main() {
 
-    matrix_initializations();
+    basic_matrix_operations();
 	return 0; 
 }
 
@@ -20,8 +19,16 @@ int main() {
  * This is additionally found in the documentation here:  
  * http://arma.sourceforge.net/docs.html#zeros_member
  */
-void matrix_initializations() {
+void basic_matrix_operations() {
+    /******************************
+     * 1D matrix operations.
+     ******************************/
+
     
+    /******************************
+     * 2D matrix operations.
+     ******************************/
+
     // Demonstrates different ways to
     // create a 5x10 matrix and set values to zero.
     mat zero_matrix(5, 10); 
@@ -42,14 +49,15 @@ void matrix_initializations() {
     custom_vals.fill(155.0);
     cout<<"4x5 matrix filled with the double 155.0"<<endl<<custom_vals<<endl;
 
+    /***********************************
+     * 3D matrix operations
+     ***********************************/
+    
+    // Write some shit here.
+
+    return;
+
 }
 
-
-
-void convolution() {
-	vec X = randu<vec>(100);
-	cx_vec Y = fft(X, 128);
-	cout<<Y<<endl;
-}
 
 
