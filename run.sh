@@ -1,1 +1,1 @@
-g++ example.cpp -o example -lopenblas -llapack -larmadillo
+g++ examples.cpp -o example.out -lopenblas -llapack -larmadillo
