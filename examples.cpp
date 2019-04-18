@@ -10,21 +10,6 @@ void basic_matrix_operations();
 
 int main() {
 
-    basic_matrix_operations();
-	return 0; 
-}
-
-/*
- * This function outlines ways to initialize a matrix.
- * This is additionally found in the documentation here:  
- * http://arma.sourceforge.net/docs.html#zeros_member
- */
-void basic_matrix_operations() {
-    /******************************
-     * 1D matrix operations.
-     ******************************/
-
-    
     /******************************
      * 2D matrix operations.
      ******************************/
@@ -49,12 +34,32 @@ void basic_matrix_operations() {
     custom_vals.fill(155.0);
     cout<<"4x5 matrix filled with the double 155.0"<<endl<<custom_vals<<endl;
 
-    /***********************************
-     * 3D matrix operations
-     ***********************************/
-    
-    // Write some shit here.
+    // Determinant of a 4x4 matrix
+    mat dm = randu<mat>(4, 4);
+    double d = det(dm);
+    cout<<"Det("<<endl<<dm<<")"<<endl;
+    cout<<"Determinant of a 4x4 matrix: "<<d<<endl;
 
+    
+    /***********************************
+     * lambda function with transform
+     ***********************************/
+    A = ones<mat>(4, 5);
+
+    // add 123 to each element
+    A.transform( [](double val) { return (val + 123.0); } );
+
+	return 0; 
+}
+
+/*
+ * This function outlines ways to initialize a matrix.
+ * This is additionally found in the documentation here:  
+ * http://arma.sourceforge.net/docs.html#zeros_member
+ */
+void basic_matrix_operations() {
+
+    
     return;
 
 }
