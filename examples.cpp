@@ -23,7 +23,7 @@ void matrix_initializations() {
     
     // Demonstrates different ways to
     // create a 5x10 matrix and set values to zero.
-	mat zero_matrix(5, 10); 
+    mat zero_matrix(5, 10); 
     zero_matrix.zeros(); 
     cout<<"A 5x10 zero matrix:"<<zero_matrix<<endl;
     
