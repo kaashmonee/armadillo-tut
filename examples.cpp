@@ -51,6 +51,27 @@ int main() {
     // add 123 to each element
     // A.transform( [](double val) { return (val + 123.0); } );
 
+
+
+    /*******************************
+     * FileIO
+     *******************************/
+    // Demonstrates FileIO capabilities in Armadillo.
+    // http://arma.sourceforge.net/docs.html#save_load_mat 
+    // All FileIO functions are members of of the Mat, Col, Row, and Cube classes.
+    // On success, .save() and .load() return a boolean set to true.
+    // The arma_x file types have a header that helps speed up loading.
+   
+    mat f = randu<mat>(5, 5);
+
+    // Save the file in arma_binary format
+    cout<<"\nSaving randoly generated matrix as an arma_bin...arma_bin_f.bin\n";
+    f.save("./arma_bin_f.bin");
+
+    // Save the file in arma_ascii format
+    // cout<<"Saving the randomly generated matrix as an arma_ascii file...arma_ascii_f.txt\n";
+    // f.save("arma_ascii_f.txt". arma_ascii);
+
 	return 0; 
 }
 
