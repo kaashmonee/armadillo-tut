@@ -2,6 +2,7 @@
 #include <armadillo>
 #include <stdlib.h>
 #include <stdio.h>
+#include <string>
 
 using namespace std;
 using namespace arma;
@@ -63,14 +64,34 @@ int main() {
     // The arma_x file types have a header that helps speed up loading.
    
     mat f = randu<mat>(5, 5);
+    bool save_success;
 
     // Save the file in arma_binary format
     cout<<"\nSaving randoly generated matrix as an arma_bin...arma_bin_f.bin\n";
-    f.save("./arma_bin_f.bin");
+    save_success = f.save("./arma_bin_f.bin");
+    string string_success = save_success ? "Save success\n" : "Save unsuccessful\n";
+    cout<<string_success<<endl;
 
     // Save the file in arma_ascii format
+    // Not working at the moment
     // cout<<"Saving the randomly generated matrix as an arma_ascii file...arma_ascii_f.txt\n";
-    // f.save("arma_ascii_f.txt". arma_ascii);
+    // f.save("arma_ascii_f.txt". arma_ascii); // This is not working.
+    
+    // Not working at the moment
+    // Saving as HDF5 format with an internal dataset called "my data"
+    // cout<<"Saving the randomly generated matrix as an hdf5 file...\n";
+    // f.save(hdf5_name("f_hdf5.h5", "my_data"));
+
+    // Loading files
+    cout<<"Loading and printing all the saved files...\n";
+    mat load_matrix;
+    cout<<"Loading arma_bin_f.bin\n";
+    load_matrix.load("arma_bin_f.bin");
+    cout<<"Loaded matrix:\n"<<load_matrix<<endl<<endl;
+
+    cout<<"FileIO complete\n\n";
+
+
 
 	return 0; 
 }
